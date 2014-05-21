@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h1 class="center primary-color" >Human Development </h1>
+
+{% for job in jobs %}
+<section class="empleo" >
+<ul>
+	<li>Empleo:{{job.empleo}}</li>
+	<li>Web: <a class="link" href="#">{{job.enlace}}</a> </li>
+	<li>Direccion: {{job.direccion}}</li>
+	<li>Descripcion:{{job.descripcion}}</li>
+	<li>Empresa: {{job.usuario}}</li>
+	<li class="timestamp">{{job.timestamp | timesince}}</li>
+</ul>
+</section> <br>
+{% endfor %}
+
+
+	<style>
+
+	html
+	{
+		background: #1B1B24;
+		font-family: Verdana;
+
+	}
+
+	.timestamp
+	{
+		text-align: right;
+		margin-right: 1em;
+		font-size: 12px;
+		font-style:italic; 
+	}
+
+	.link
+	{
+		color:white;
+	}
+		section.empleo
+		{
+			width: 100%;
+			margin: 0 auto;
+			border: 1px solid gray;
+			font-size: 18px;
+			list-style: none;
+			background: #464368;
+		}
+
+			section.empleo:hover
+		{
+			
+			border: 1px solid #029fd8;
+			
+		}
+
+		section.empleo ul
+		{
+						list-style: none;
+
+		}
+		section.empleo ul li
+		{
+			color:white;
+		}
+		.center
+		{
+			
+			width: 50%;
+			margin: 0.5em auto ;
+			text-align: center;
+		}
+		
+		.primary-color
+		{
+			color:white;
+		}
+
+	</style>
+</body>
+</html>
