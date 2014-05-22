@@ -11,11 +11,14 @@
 {% for job in jobs %}
 <section class="empleo" >
 <ul>
-	<li>Empleo:{{job.empleo}}</li>
-	<li>Web: <a class="link" href="#">{{job.enlace}}</a> </li>
-	<li>Direccion: {{job.direccion}}</li>
-	<li>Descripcion:{{job.descripcion}}</li>
 	<li>Empresa: {{job.usuario}}</li>
+	<li>Empleo:{{job.empleo}}</li>
+	<li>Area: <a href="{{ar.url}}">{{job.area}}></a> </li>
+	<li>Descripcion:{{job.descripcion}}</li>
+	<li>Direccion: {{job.direccion}}</li>
+	<li>Estado: {{job.estado}}</li>
+	<li>Pais: {{job.pais}}</li>
+	<li>Web: <a class="link" href="#">{{job.enlace}}</a> </li>
 	<li class="timestamp">{{job.timestamp | timesince}}</li>
 </ul>
 </section> <br>

@@ -5,6 +5,18 @@
 	<li>Experiencia: {{backgrounds.experiencie}}</li>
 </ul>
 
+{% for job in jobs %}
+<section class="empleo" >
+<ul>
+	<li>Empleo:{{job.empleo}}</li>
+	<li>Web: <a class="link" href="#">{{job.enlace}}</a> </li>
+	<li>Direccion: {{job.direccion}}</li>
+	<li>Descripcion:{{job.descripcion}}</li>
+	<li>Empresa: {{job.usuario}}</li>
+	<li class="timestamp">{{job.timestamp | timesince}}</li>
+</ul>
+</section> <br>
+{% endfor %}
 
 
 <style>
@@ -48,12 +60,13 @@
 	}
 		section.empleo
 		{
-			width: 100%;
-			margin: 0 auto;
+			width: 50%;
+			margin: 1em auto;
 			border: 1px solid gray;
 			font-size: 18px;
 			list-style: none;
-			background: #464368;
+			background: none;
+			padding:1em 1em;
 		}
 
 			section.empleo:hover
