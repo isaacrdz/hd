@@ -6,6 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
      url(r'^$', 'jobs.views.home', name='home'),
+      url(r'^profile/(?P<first_name>[\w\-/w]+)/', 'profiles.views.profile', name='profile'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),

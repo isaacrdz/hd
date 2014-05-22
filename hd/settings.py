@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'jobs',
     'locations',
     'gunicorn',
+    'profiles',
 )
 
 MIDDLEWARE_CLASSES = (
