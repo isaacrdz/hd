@@ -10,10 +10,3 @@ def profile(request, first_name):
 	template = "profiles.html"
 	return render(request,template, {"backgrounds":backgrounds,"request":request} ) 
 
-def categoria(request,id_categoria):
-    categorias = Categoria.objects.all()
-    cat = get_object_or_404(Categoria, pk = id_categoria)
-    #cat = Categoria.objects.get(pk = id_categoria)
-    enlaces = Enlace.objects.filter(categoria = cat)
-    template = "index.html"
-    return render(request, template,locals())

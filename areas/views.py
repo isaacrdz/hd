@@ -7,9 +7,9 @@ from .models import Area
 
 
 
-def area(request,id_area):
+def area(request,nombre):
 	areas = Area.objects.all()
-	ar = get_object_or_404(Area, pk = id_area)
+	ar = get_object_or_404(Area, nombre = nombre)
 	jobs = Job.objects.filter(area = ar)
 	template = "empleos.html"
 	return render(request,template,locals())
