@@ -7,9 +7,8 @@ from jobs.models import Job
 def profile(request, first_name):
 	backgrounds = get_object_or_404(Background, first_name= first_name)
 	location = Location.objects.all() 
-	jobs = Job.objects.get()
 	template = "profiles.html"
-	return render(request,template, {"backgrounds":backgrounds, "jobs":jobs, "request":request} ) 
+	return render(request,template, {"backgrounds":backgrounds,"request":request} ) 
 
 def categoria(request,id_categoria):
     categorias = Categoria.objects.all()

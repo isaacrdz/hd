@@ -5,18 +5,7 @@
 	<li>Experiencia: {{backgrounds.experiencie}}</li>
 </ul>
 
-{% for job in jobs %}
-<section class="empleo" >
-<ul>
-	<li>Empleo:{{job.empleo}}</li>
-	<li>Web: <a class="link" href="#">{{job.enlace}}</a> </li>
-	<li>Direccion: {{job.direccion}}</li>
-	<li>Descripcion:{{job.descripcion}}</li>
-	<li>Empresa: {{job.usuario}}</li>
-	<li class="timestamp">{{job.timestamp | timesince}}</li>
-</ul>
-</section> <br>
-{% endfor %}
+
 
 
 <style>
