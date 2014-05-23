@@ -4,9 +4,6 @@ from .models import Area
 
 # Create your views here.
 
-
-
-
 def area(request,nombre):
 	areas = Area.objects.all()
 	ar = get_object_or_404(Area, nombre = nombre)
