@@ -1,10 +1,10 @@
 from django.db import models
+from sorl.thumbnail import ImageField
 from django.contrib.auth.models import User
 from contries.models import Contry
 from states.models import State
 from locations.models import Location
 from areas.models import Area
-from sorl.thumbnail import ImageField
 
 
 # Create your models here.

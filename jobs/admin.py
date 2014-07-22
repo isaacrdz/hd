@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import *
+from .models import Job
 from sorl.thumbnail import get_thumbnail
 
 class JobAdmin(admin.ModelAdmin):
@@ -15,9 +15,6 @@ class JobAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Job, JobAdmin)
-admin.site.register(Location)
-admin.site.register(Contry)
-admin.site.register(State)
 
 
 

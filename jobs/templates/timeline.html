@@ -34,14 +34,12 @@
 
 	<div class="container padding relative center-block">
 
-		<figure class="avatar" >
 		{% load thumbnail %}
-		{% thumbnail job.image "150" as im  %}
-			<img src="{{ im.url }}" width="{{ im.width }}" height="{{im.heiht}}" alt="">
+		{% thumbnail job.image "50"  as im %}	
+			<img src="{{ im.url }}" width="{{ im.width }}" height="{{im.height}}" >		
 		{% endthumbnail %}
-		</figure>
 
-
+	
 
 		<div class="items ">
 			<p class="business-name font-size-small bold">{{job.usuario}} </p>

@@ -101,3 +101,4 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStora
 MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]+['media']) 
 STATIC_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]+['content']) 
 MEDIA_URL = '/media/'
+
