@@ -1,0 +1,182 @@
+@import "normalize.styl"
+@import "fonts.styl"
+
+
+
+gris_claro = #818181
+gris_mas_claro = #F0F0F0
+gris_oscuro = #333333
+gris_verdoso = #A3ACB2
+magenta = #BD255B
+pretty_blue = #57ADEE
+pretty_blue_light = #6ac8e4
+pretty_blue_background = #F5F8FA
+border_gray = #dbdbdb
+
+
+a
+	text-decoration underline
+	color pretty_blue_light
+
+	
+body
+	background white
+	color #333333
+	font-family: 'Source Sans Pro', sans-serif;
+
+#menu 
+	background gris_verdoso
+	display none
+	left 30px
+	position absolute
+	z-index 9
+#menu
+	ul
+		list-style none
+		margin 0 auto
+		padding .5em 2em
+
+#menu
+	ul
+		li
+			margin-top 1em
+
+#menu
+	ul
+		li 
+			a 
+				color white
+.absolute
+	position absolute
+
+.action
+	color pretty_blue_light
+	font-size 1.2em
+	margin-right 1em
+	&:last-child
+		margin-right 0
+	&.gray
+		color gris_claro
+.actions
+	background white
+	bottom 0
+	left 0
+	padding .5em .5em
+	position absolute
+	right 0
+.header
+	height 3.5em
+	background white
+	border-bottom 1px solid border_gray
+.text-color-1
+	color white
+.avatar
+	margin 0 
+	width 38px
+	height 38px
+.bold
+	font-weight bold
+.button-menu
+	color gris_verdoso
+	left .5em
+	margin-top -10px
+	position absolute
+	top 30%
+
+.button-menu:hover
+	color pretty_blue_light
+
+.business-name,.job-name,.timestamp
+	margin 0
+.center-block
+	margin 0 auto
+.center-text
+	text-align center
+.container
+	background white
+	padding 0
+	margin 1em
+	border 1px solid border_gray
+.container:hover
+	background pretty_blue_background
+.font-size-small
+	font-size 16px
+.icon-star
+	color red
+.items
+	padding .2em
+	margin 0 0 0 .5em
+.job-description
+	margin 1em 0 3em 0
+.right-text
+	text-align right
+.search-icon
+	position absolute
+	left .5em
+	top 1.1em
+	color white
+.info
+	margin 0
+	
+.input
+	margin-top .5em
+	margin-right 1em
+	border 1px solid gris_verdoso
+	height 2em
+	width 11em
+	border-radius 5px
+	padding 0 1em 0 2em
+	background gris_verdoso
+
+.avatar, .items
+	display inline-block
+	vertical-align top
+.text-align-right
+	text-align right
+.ranking
+	background gris_mas_claro
+.relative
+	position relative
+.padding
+	padding 1em
+.wrap
+	width 1000px
+.right
+	float right
+
+	
+/* @media screen and (min-width:480px) */
+	
+
+
+@media screen and (min-width:1000px)
+
+	#mini-menu
+		display none
+	
+	#menu 
+		background none
+		color red
+		display block
+		left 30px		
+		z-index 9
+	
+	#menu
+		ul
+			
+
+	#menu
+		ul
+			li
+				display inline-block
+				margin-right 1em
+				
+				
+				
+
+	#menu
+		ul
+			li 
+				a 
+					color pretty_blue_light
+					text-decoration none

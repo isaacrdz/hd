@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 def home (request):
 	jobs = Job.objects.order_by("-timestamp").all()
 	locations = Location.objects.all()
-	template = 'empleos.html'
+	template = 'timeline.html'
 	return render(request, template,{"jobs":jobs, "locations": locations})
 
 

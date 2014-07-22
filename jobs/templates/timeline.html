@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>hd</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
+	<link rel="stylesheet" href="{% static "css/styles.css" %}">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="{ % static "js/main.js" %}"></script>
+</head>
+<body>
+<header class="header relative ">
+	<a id="mini-menu" href="#"  class=" button-menu icon-menu relative"></a>
+	<nav id="menu" >
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Notifications</a></li>
+			<li><a href="#">Discover</a></li>
+			<li><a href="#">Me</a></li>
+		</ul>
+	</nav>
+	<div class="search right">
+		<form action="" class="relative">
+			<span class="icon-search search-icon"></span>
+			<input class="input" type="text" placeholder="busqueda">
+		</form>
+	</div>
+
+</header>
+
+{% for job in jobs %}
+
+	<div class="container padding relative center-block">
+
+		<figure class="avatar" >
+		{% load thumbnail %}
+		{% thumbnail job.image "150" as im  %}
+			<img src="{{ im.url }}" width="{{ im.width }}" height="{{im.heiht}}" alt="">
+		{% endthumbnail %}
+		</figure>
+
+
+
+		<div class="items ">
+			<p class="business-name font-size-small bold">{{job.usuario}} </p>
+			<p class="job-name font-size-small bold ">{{job.empleo}} </p>
+			<p class="timestamp font-size-small">{{job.timestamp | timesince }} </p>
+		</div>
+		<div class="job-description font-size-small ">
+
+		<div class="icon-quill"></div>
+		<div class="icon-camera"></div>
+		<div class="icon-location"></div>
+			<p class="bold">Job Description</p>
+			<p class="info">{{job.descripcion}} </p> <br>
+			<p class=" info bold ">Direccion:</p>
+			<p class="info">{{job.direccion}} </p>
+
+			<p class=" info bold">Estado</p>
+			<p class="info">{{job.estado}}</p>
+
+			<p class=" info bold">Pais</p>
+			<p class="info">{{job.pais}}</p>
+
+			<p class=" info bold">Web</p>
+			<p class="info"><a class="" href="#">{{job.enlace}}</a></p>
+			
+		</div>
+	<div class="actions right-text">
+		<a href="#" class="action icon-add text-align-right"></a>
+		<a href="#" class="action icon-share"></a>
+	</div>
+	
+	</div>
+	{% endfor %}
+
+</body>
+</html>

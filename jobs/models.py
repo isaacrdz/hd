@@ -4,6 +4,8 @@ from contries.models import Contry
 from states.models import State
 from locations.models import Location
 from areas.models import Area
+from sorl.thumbnail import ImageField
+
 
 # Create your models here.
 
@@ -16,7 +18,7 @@ class Job(models.Model):
 	estado = models.ForeignKey(State)
 	pais = models.ForeignKey(Contry)
 	descripcion = models.TextField()
-	avatar = models.ImageField(upload_to = 'jobs')
+	image = models.ImageField(upload_to = 'static')
 	usuario = models.ForeignKey(User)
 	timestamp = models.DateTimeField(auto_now_add=True)
 
