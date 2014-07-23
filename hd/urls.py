@@ -11,7 +11,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-     url(r'^$', 'jobs.views.home', name='home'),
+     url(r'^timeline$', 'jobs.views.timeline', name='timeline'),
      url(r'^profile/(?P<first_name>[\w\-/w]+)/', 'profiles.views.profile', name='profile'),
      url(r'^area/(?P<nombre>[\w\-/w]+)/', 'areas.views.area', name='area'),
      url(r'^empresa/(?P<usuario>[\w\-/w]+)/', 'jobs.views.empresa', name='empresa'),

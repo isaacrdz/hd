@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 
 
-def home (request):
+def timeline (request):
 	jobs = Job.objects.order_by("-timestamp").all()
 	locations = Location.objects.all()
 	template = 'timeline.html'

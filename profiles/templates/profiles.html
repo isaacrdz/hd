@@ -1,8 +1,25 @@
-<h1 class="primary-color center">My Profile</h1>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Profile</title>
+	</head>
+	<body>
+
+
+	
+	<h1 class="primary-color center">My Profile</h1>
+
 <ul class="profile margin-1">
+<li>{% load thumbnail %}
+		{% thumbnail backgrounds.avatar "50"  as im %}	
+			<img src="{{ im.url }}" width="{{ im.width }}" height="{{im.height}}" >		
+		{% endthumbnail %}
+</li>
 	<li>Nombre: {{backgrounds.first_name}} {{backgrounds.last_name}}</li>
-	<li>Resumen: <br> <br>{{backgrounds.summary}}</li>
+	<li>Resumen: {{backgrounds.summary}}</li>
 	<li>Experiencia: {{backgrounds.experiencie}}</li>
+	<li>Skills: {{backgrounds.skills}}</li>
 </ul>
 
 
@@ -88,3 +105,6 @@
 		}
 
 	</style>
+		
+	</body>
+	</html>
