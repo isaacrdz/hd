@@ -16,6 +16,8 @@ urlpatterns = patterns('',
      url(r'^area/(?P<nombre>[\w\-/w]+)/', 'areas.views.area', name='area'),
      url(r'^empresa/(?P<usuario>[\w\-/w]+)/', 'jobs.views.empresa', name='empresa'),
     # url(r'^blog/', include('blog.urls')),
+     url(r'^add/$', 'jobs.views.add', name='add'),
+
 
     url(r'^admin/', include(admin.site.urls)),
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT

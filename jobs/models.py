@@ -12,13 +12,13 @@ from areas.models import Area
 class Job(models.Model):
 	empleo = models.CharField(max_length = 50)
 	area = models.ForeignKey(Area)
-	puntos = models.IntegerField(default = 0)
+	puntos = models.IntegerField(default = 0, blank=True)
 	enlace = models.URLField()
 	direccion = models.ForeignKey(Location)
 	estado = models.ForeignKey(State)
 	pais = models.ForeignKey(Contry)
 	descripcion = models.TextField()
-	image = models.ImageField(upload_to = 'static')
+	image = models.ImageField(upload_to = 'static', blank=True)
 	usuario = models.ForeignKey(User)
 	timestamp = models.DateTimeField(auto_now_add=True)
 

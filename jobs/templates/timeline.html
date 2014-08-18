@@ -19,6 +19,7 @@
 			<li><a href="#">Notifications</a></li>
 			<li><a href="#">Discover</a></li>
 			<li><a href="#">Me</a></li>
+			<li><a href="/add/">Post a Job</a></li>
 		</ul>
 	</nav>
 	<div class="search right">
@@ -43,7 +44,8 @@
 
 		<div class="items ">
 			<p class="business-name font-size-small bold">{{job.usuario}} </p>
-			<p class="job-name font-size-small bold ">{{job.empleo}} </p>
+			<p class="job-name font-size-small bold ">{{job.empleo}} - <a href="/area/{{job.area}}">{{job.area}}</a></p>
+		
 			<p class="timestamp font-size-small">{{job.timestamp | timesince }} </p>
 		</div>
 		<div class="job-description font-size-small ">
