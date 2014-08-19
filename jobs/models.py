@@ -3,7 +3,6 @@ from sorl.thumbnail import ImageField
 from django.contrib.auth.models import User
 from contries.models import Contry
 from states.models import State
-from locations.models import Location
 from areas.models import Area
 
 
@@ -13,14 +12,18 @@ class Job(models.Model):
 	empleo = models.CharField(max_length = 50)
 	area = models.ForeignKey(Area)
 	puntos = models.IntegerField(default = 0, blank=True)
-	enlace = models.URLField()
-	direccion = models.ForeignKey(Location)
+	descripcion = models.TextField()
+	calle = models.CharField(max_length  = 50)
+	numero = models.IntegerField(default = 0)
+	colonia = models.CharField (max_length = 50)
+	ciudad = models.CharField(max_length=50)
 	estado = models.ForeignKey(State)
 	pais = models.ForeignKey(Contry)
-	descripcion = models.TextField()
-	image = models.ImageField(upload_to = 'static', blank=True)
-	usuario = models.ForeignKey(User)
+	codigoPostal = models.IntegerField(default = 0)
+	enlace = models.URLField()
 	timestamp = models.DateTimeField(auto_now_add=True)
+	usuario = models.ForeignKey(User)	
+	#image = models.ImageField(upload_to = 'static', blank=True)
 
 	def __unicode__(self):
 		return  self.empleo

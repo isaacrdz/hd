@@ -1,5 +1,12 @@
+<div class="content ">
+<h1 class="tcenter" >Post a Job</h1>
+	
+</div>
+<div class="content">
+	
+
 	<!-- form -->
-<form method="post">
+<form enctype="multipart/form-data" method="post">
 	<div id="form">
 		{% csrf_token %}
 		{{form.as_p}}
@@ -7,6 +14,7 @@
 	 </div>
 <form>
 		<!-- end form -->
+</div>
 
 
 		<style>
@@ -17,3 +25,35 @@
 
 
 		</style>
+
+
+		<style>
+
+
+	.content
+		{
+			border:1px solid black;
+			margin: 1em auto;
+			padding: 1em;
+			width: 50%;
+			font-family: arial;
+		}
+
+
+
+	.tcenter
+		{
+			text-align: center;
+		}
+	
+	.font-medium
+		{
+			font-size: 25px;
+			padding:1em .7em ;
+
+		}
+
+
+
+
+</style>

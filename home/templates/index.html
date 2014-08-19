@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Welcome {{username}}!</h1>
+
+<a class="font-medium" href="/add">Please, Post a Job!</a>
+</div>
+	<a href="{% url 'log-out' %}" class="btn btn-danger btn-lg" role="button">Logout</a>
+{% endblock content %}

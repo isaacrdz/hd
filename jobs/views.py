@@ -1,23 +1,27 @@
-from jobs.models import Job
-from django.shortcuts import render,get_object_or_404
-from models import *
-from jobs.models import Job
-from locations.models import Location
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse,HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.shortcuts import render,get_object_or_404
 from django.template.context import RequestContext
 from forms import *
+from jobs.models import Job
+from jobs.models import Job
+from models import *
 
 
 
 
 
+def welcome(request):
+	template  ='welcome.html'
+	return render(request, template)
 
 def timeline (request):
 	jobs = Job.objects.order_by("-timestamp").all()
-	locations = Location.objects.all()
 	template = 'timeline.html'
-	return render(request, template,{"jobs":jobs, "locations": locations})
+	return render(request, template,{"jobs":jobs,})
 
 
 def empresa (request, usuario):
@@ -48,3 +52,17 @@ def add(request):
 		 
 
 	    return render(request, "form.html", (locals()))
+
+
+def enter(request):
+    return render(request, 'login.html')
+
+
+@login_required
+def home(request):
+    return render(request, 'index.html', {'username': request.user.username})
+
+
+def log_out(request):
+    logout(request)
+    return redirect('enter')

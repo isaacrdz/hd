@@ -1,13 +1,13 @@
 from django.contrib import admin
 from .models import Job
-from sorl.thumbnail import get_thumbnail
+#from sorl.thumbnail import get_thumbnail
 
 class JobAdmin(admin.ModelAdmin):
-	list_display = ('empleo','imagen_album')
+	list_display = ('empleo','area','descripcion')
 
-	def imagen_album(self, obj):
-		return '<img src="%s">' % get_thumbnail(obj.image, '100x200', format='PNG').url # , crop='center'
-	imagen_album.allow_tags = True 
+#	def imagen_album(self, obj):
+#		return '<img src="%s">' % get_thumbnail(obj.image, '100x200', format='PNG').url # , crop='center'
+#	imagen_album.allow_tags = True 
 
 
 

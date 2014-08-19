@@ -6,5 +6,5 @@ class PostForm(ModelForm):
     
     class Meta:
         model = Job
-        exclude = ("usuario","puntos","image")
+        exclude = ("usuario","puntos",)
      	

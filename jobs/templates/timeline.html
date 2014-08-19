@@ -34,16 +34,17 @@
 {% for job in jobs %}
 
 	<div class="container padding relative center-block">
-
+<!-- 
 		{% load thumbnail %}
 		{% thumbnail job.image "50"  as im %}	
 			<img src="{{ im.url }}" width="{{ im.width }}" height="{{im.height}}" >		
 		{% endthumbnail %}
+ -->
 
 	
 
 		<div class="items ">
-			<p class="business-name font-size-small bold">{{job.usuario}} </p>
+			<a href="/empresa/{{job.usuario}}" class="business-name font-size-small bold">{{job.usuario}} </a>
 			<p class="job-name font-size-small bold ">{{job.empleo}} - <a href="/area/{{job.area}}">{{job.area}}</a></p>
 		
 			<p class="timestamp font-size-small">{{job.timestamp | timesince }} </p>
@@ -55,7 +56,7 @@
 		<div class="icon-location"></div>
 			<p class="bold">Job Description</p>
 			<p class="info">{{job.descripcion}} </p> <br>
-			<p class=" info bold ">Direccion:</p>
+			
 			<p class="info">{{job.direccion}} </p>
 
 			<p class=" info bold">Estado</p>

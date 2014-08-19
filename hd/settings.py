@@ -37,14 +37,16 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
     'contries',
     'states',
     'jobs',
-    'locations',
     'gunicorn',
     'profiles',
     'areas',
     'sorl.thumbnail',
+    'home',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -89,6 +91,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = '/login/'
+
+
 STATICFILES_FINDER = (
 'django.contrib.staticfiles.finders.FileSystemFinder',
 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -102,3 +108,28 @@ MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]+['media'])
 STATIC_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2]+['content']) 
 MEDIA_URL = '/media/'
 
+# Python Social Auth
+
+## Twitter
+SOCIAL_AUTH_TWITTER_KEY = 'ijiNdRJtAl7lEJOArMLiPiGqx'
+SOCIAL_AUTH_TWITTER_SECRET = 'Q5hz2lnAo9bcEdi0hZvY92aSupJXsfS5CIkuAuCB0IDp4FYRiI'
+
+## Facebook
+SOCIAL_AUTH_FACEBOOK_KEY = '315186495323797'
+SOCIAL_AUTH_FACEBOOK_SECRET = '991e0729c4d612e9d7d19ee75090f112'
+# SOCIAL_AUTH_FACEBOOK_APP_NAMESPACE = 'zacklogin'
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+# FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+
+# Backends
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookAppOAuth2',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# URLs
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_URL = '/login/'
