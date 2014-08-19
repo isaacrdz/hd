@@ -1,3 +1,37 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>hd</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{% static "css/styles.css" %}">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="{% static "js/main.js" %}"></script>
+</head>
+<body>
+<header class="header relative ">
+	<a id="mini-menu" href="#"  class=" button-menu icon-menu relative"></a>
+	<nav id="menu" >
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Notifications</a></li>
+			<li><a href="#">Discover</a></li>
+			<li><a href="#">Me</a></li>
+			<li><a href="/add/">Post a Job</a></li>
+		</ul>
+	</nav>
+	<div class="search right">
+		<form action="" class="relative">
+			<span class="icon-search search-icon"></span>
+			<input class="input" type="text" placeholder="busqueda">
+		</form>
+	</div>
+
+</header>
+
 <div class="content ">
 <h1 class="tcenter" >Post a Job</h1>
 	
@@ -57,3 +91,6 @@
 
 
 </style>
+
+</body>
+</html>
