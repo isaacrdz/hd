@@ -23,7 +23,7 @@ class Job(models.Model):
 	enlace = models.URLField()
 	timestamp = models.DateTimeField(auto_now_add=True)
 	usuario = models.ForeignKey(User)	
-	#image = models.ImageField(upload_to = 'static', blank=True)
+	image = models.ImageField(upload_to = 'static', null=True, )
 
 	def __unicode__(self):
 		return  self.empleo

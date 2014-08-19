@@ -36,7 +36,7 @@ def add(request):
 	# if this is a POST request we need to process the form data
 	    if request.method == 'POST':
 	        # create a form instance and populate it with data from the request:
-	        form = PostForm(request.POST)
+	        form = PostForm(request.POST, request.FILES)
 	        # check whether it's valid:
 	        if form.is_valid():
 	        	job = form.save(commit = False)
