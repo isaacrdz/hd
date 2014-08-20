@@ -1,6 +1,10 @@
-$(document).on("ready", function(){
+$(document).on("ready", inicio)
+	function inicio()
+	{
+		$("#mini-menu").on("click",showMenu);
+	}
 
-
-alert("hola");
-
-});
+	function showMenu()
+	{
+		$("nav").toggle();
+	}
