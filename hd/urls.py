@@ -23,10 +23,7 @@ urlpatterns = patterns('',
     url(r'^login/$', 'home.views.enter', name='enter'),
     url(r'^log-out/$', 'home.views.log_out', name='log-out'),
     url('', include('social.apps.django_app.urls', namespace='social')),
-
-
-
-    
+    #Heroku static
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 
 
