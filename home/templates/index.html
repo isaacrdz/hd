@@ -3,6 +3,10 @@
 {% block content %}
 	<h1>Welcome {{username}} {{email}} !</h1>
 
+
+<img src="graph.facebook.com/{facebook_id}/picture?type=large" alt="">
+
+
 <a class="font-medium" href="/add">Please, Post a Job!</a>
 </div>
 	<a href="{% url 'log-out' %}" class="btn btn-danger btn-lg" role="button">Logout</a>
