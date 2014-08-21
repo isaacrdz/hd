@@ -13,6 +13,9 @@
 
 <img src="http://graph.facebook.com/{id}/picture?type=large" % response['id'] alt=""> 
 
+<img src="http://graph.facebook.com/{user.uid}/picture?type=large" % response['id'] alt=""> 
+<img src="http://graph.facebook.com/{{user.uid}}/picture?type=large"  alt=""> 
+
 <img src="http://graph.facebook.com/%s/picture?type=large" "% response['id']" alt=""> 
 
 <img src="http://graph.facebook.com/%s/picture?type=large % response['id']" alt="">
