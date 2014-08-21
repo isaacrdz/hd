@@ -110,6 +110,19 @@ MEDIA_URL = '/media/'
 
 # Python Social Auth
 
+SOCIAL_AUTH_PIPELINE = (
+        'social.pipeline.social_auth.social_details',
+        'social.pipeline.social_auth.social_uid',
+        'social.pipeline.social_auth.auth_allowed',
+        'social.pipeline.social_auth.social_user',
+        'social.pipeline.user.get_username',
+        'social.pipeline.user.create_user',
+        'social.pipeline.social_auth.associate_user',
+        'social.pipeline.social_auth.load_extra_data',
+        'social.pipeline.user.user_details'
+        # 'profiles.pipeline.user_details'
+    )
+
 ## Twitter
 SOCIAL_AUTH_TWITTER_KEY = 'ijiNdRJtAl7lEJOArMLiPiGqx'
 SOCIAL_AUTH_TWITTER_SECRET = 'Q5hz2lnAo9bcEdi0hZvY92aSupJXsfS5CIkuAuCB0IDp4FYRiI'
