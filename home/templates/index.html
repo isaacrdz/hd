@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1>Welcome {{username}} {{user.email}} {{user.first_name}} {{user.last_name}} {{user.picture}} !</h1>
+	<h1>Welcome {{username}} !</h1>
+
+	<p>email: {{user.email}}</p>
+	<p>first name: {{user.firstname}}</p>
+	<p>last name: {{user.lastname}}</p>
 
 <img src="http://graph.facebook.com/10154512780255599/picture?type=large" alt="">
+<img src="http://graph.facebook.com/{{id}}/picture?type=large" alt="">
+<img src="http://graph.facebook.com/10154512780255599/picture?type=large" % response['id'] alt="">
+<img src="http://graph.facebook.com/10154512780255599/picture?type=large" "% response['id']" alt="">
+<img src="http://graph.facebook.com/%s/picture?type=large % response['id']" alt="">
+
+% response['id']
 
 
 
