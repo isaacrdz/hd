@@ -53,9 +53,7 @@
 </div>
 	<a href="{% url 'log-out' %}" class="btn btn-danger btn-lg" role="button">Logout</a>
 
-{% if user.facebook_id %}
-	<img src="http://graph.facebook.com/{{ user.facebook_id }}/picture?type=large" alt="">
-{% endif %}
+
 
 
 {% for job in jobs %}
