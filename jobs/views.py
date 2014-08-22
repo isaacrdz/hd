@@ -19,12 +19,12 @@ def welcome(request):
 	return render(request, template)
 
 def timeline (request):
-	jobs = Job.objects.order_by("-timestamp").all()
-	template = 'timeline.html'
-    setattr(request.user, 'facebook_id', get_facebook_id(request.user))
+	setattr(request.user, 'facebook_id', get_facebook_id(request.user))
     context = {
         'user': request.user
-    }	
+    }
+    jobs = Job.objects.order_by("-timestamp").all()
+	template = 'timeline.html'	
 	return render(request, template,{"jobs":jobs, context})
 
 
