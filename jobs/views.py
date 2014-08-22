@@ -20,7 +20,7 @@ def welcome(request):
 	return render(request, template)
 
 def timeline (request):
-	 setattr(request.user, 'facebook_id', get_facebook_id(request.user))
+	setattr(request.user, 'facebook_id', get_facebook_id(request.user))
     context = {
         'user': request.user
     }
