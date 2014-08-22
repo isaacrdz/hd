@@ -17,8 +17,9 @@
 	<p>  {{ user_id}}</p>
 	<p>  { user-id}</p>
 	
-	
-<!-- <img src="http://graph.facebook.com/10154512780255599/picture?type=large" alt=""> -->
+	{% if user.facebook_id %}
+	<img src="http://graph.facebook.com/{{ user.facebook_id }}/picture?type=large" alt="">
+	{% endif %}
 
 
 
