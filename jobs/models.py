@@ -20,7 +20,7 @@ class Job(models.Model):
 	estado = models.ForeignKey(State)
 	pais = models.ForeignKey(Contry)
 	codigoPostal = models.IntegerField(default = 0)
-	enlace = models.URLField()
+	web = models.URLField()
 	timestamp = models.DateTimeField(auto_now_add=True)
 	usuario = models.ForeignKey(User)	
 	image = models.ImageField(upload_to = 'static', null=True, )
