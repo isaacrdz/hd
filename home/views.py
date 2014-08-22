@@ -22,6 +22,5 @@ def home(request):
 
 
 def log_out(request):
-    logout(request)
-    return redirect('enter')
+   return redirect('enter')
 

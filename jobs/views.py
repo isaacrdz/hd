@@ -14,16 +14,11 @@ from home.views import get_facebook_id
 
 
 
-
 def welcome(request):
 	template  ='welcome.html'
 	return render(request, template)
 
 def timeline (request):
-	setattr(request.user, 'facebook_id', get_facebook_id(request.user))
-    context = {
-        'user': request.user
-    }
 	jobs = Job.objects.order_by("-timestamp").all()
 	template = 'timeline.html'
 	return render(request, template,{"jobs":jobs,})
