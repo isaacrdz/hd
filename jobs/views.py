@@ -11,6 +11,7 @@ from django.template.context import RequestContext
 from forms import *
 from jobs.models import Job
 from models import *
+from jobs import pipeline
 
 
 
