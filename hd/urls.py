@@ -19,9 +19,9 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
      url(r'^add/$', 'jobs.views.add', name='add'),
 
-     url(r'^$', 'jobs.views.home', name='home'),
-    url(r'^login/$', 'jobs.views.enter', name='enter'),
-    url(r'^log-out/$', 'jobs.views.log_out', name='log-out'),
+     url(r'^$', 'home.views.home', name='home'),
+    url(r'^login/$', 'home.views.enter', name='enter'),
+    url(r'^log-out/$', 'home.views.log_out', name='log-out'),
     url('', include('social.apps.django_app.urls', namespace='social')),
     #Heroku static
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
