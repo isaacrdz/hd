@@ -2,11 +2,9 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse,HttpResponseRedirect
-from django.shortcuts import render, redirect
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from django.template.context import RequestContext
 from forms import *
-from jobs.models import Job
 from jobs.models import Job
 from models import *
 
@@ -18,20 +16,10 @@ def welcome(request):
 	template  ='welcome.html'
 	return render(request, template)
 
-
-def get_facebook_id(user):
-    if user.social_auth.filter(provider='facebook').exists():
-        return user.social_auth.first().uid
-    return None
-
 def timeline (request):
-    setattr(request.user, 'facebook_id', get_facebook_id(request.user))
-    context = {
-        'user': request.user
-    }
 	jobs = Job.objects.order_by("-timestamp").all()
 	template = 'timeline.html'
-	return render(request, template,{"jobs":jobs, context})
+	return render(request, template,{"jobs":jobs,})
 
 
 def empresa (request, usuario):
