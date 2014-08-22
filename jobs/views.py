@@ -1,13 +1,17 @@
 from django.contrib.auth import logout
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse,HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.shortcuts import render, redirect
 from django.shortcuts import render,get_object_or_404
 from django.template.context import RequestContext
 from forms import *
 from jobs.models import Job
 from models import *
+
 
 
 
@@ -56,12 +60,21 @@ def add(request):
 def enter(request):
     return render(request, 'login.html')
 
+def get_facebook_id(user):
+    if user.social_auth.filter(provider='facebook').exists():
+        return user.social_auth.first().uid
+    return None
+
 
 @login_required
 def home(request):
-    return render(request, 'index.html', {'username': request.user.username})
+    setattr(request.user, 'facebook_id', get_facebook_id(request.user))
+    context = {
+        'user': request.user
+    }
+    return render(request, 'index.html', context)
 
 
 def log_out(request):
-    logout(request)
     return redirect('enter')
+
