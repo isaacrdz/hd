@@ -32,11 +32,7 @@
 
 </header>
 
-	<h1>Welcome {% if user.facebook_id %}
-	<img src="http://graph.facebook.com/{{ user.facebook_id }}/picture?type=small" alt="">
-	{% endif %}
-
- {{username}} !</h1>
+	<h1>Welcome  {{username}} !</h1>
 
 	<p> Primer Nombre: {{user.first_name}} </p>
 	<p> Apellido  {{user.last_name}}</p>
