@@ -9,7 +9,7 @@ from forms import *
 from jobs.models import Job
 from jobs.models import Job
 from models import *
-from home.views import get_facebook_id,home
+
 
 
 
@@ -18,10 +18,20 @@ def welcome(request):
 	template  ='welcome.html'
 	return render(request, template)
 
+
+def get_facebook_id(user):
+    if user.social_auth.filter(provider='facebook').exists():
+        return user.social_auth.first().uid
+    return None
+
 def timeline (request):
+    setattr(request.user, 'facebook_id', get_facebook_id(request.user))
+    context = {
+        'user': request.user
+    }
 	jobs = Job.objects.order_by("-timestamp").all()
 	template = 'timeline.html'
-	return render(request, template,{"jobs":jobs,})
+	return render(request, template,{"jobs":jobs, context})
 
 
 def empresa (request, usuario):
