@@ -161,28 +161,3 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
 SOCIAL_AUTH_LOGIN_URL = '/login/'
 
-SOCIAL_AUTH_PIPELINE = (
-    # recibe vía backend y uid las instancias de social_user y user
-    'social.pipeline.social_auth.social_details',
-
-    'social.pipeline.social_auth.social_uid',
-    'social.pipeline.social_auth.auth_allowed',
-
-    # Recibe según user.email la instancia del usuario y lo reemplaza con uno que recibió anteriormente
-    'social.pipeline.social_auth.social_user',
-
-    # Trata de crear un username válido según los datos que recibe
-    'social.pipeline.user.get_username',
-
-    # Crea un usuario nuevo si uno todavía no existe
-    'social.pipeline.user.create_user',
-
-    # Trata de conectar las cuentas
-    'social.pipeline.social_auth.associate_user',
-
-    # Recibe y actualiza social_user.extra_data
-    'social.pipeline.social_auth.load_extra_data',
-
-    # Actualiza los campos de la instancia user con la información que obtiene vía backend
-    'social.pipeline.user.user_details',
-)
