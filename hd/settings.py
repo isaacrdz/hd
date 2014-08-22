@@ -49,6 +49,12 @@ INSTALLED_APPS = (
 
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+)
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
