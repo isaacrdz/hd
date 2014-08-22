@@ -50,7 +50,7 @@ INSTALLED_APPS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    
+
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
 )
@@ -125,7 +125,8 @@ SOCIAL_AUTH_PIPELINE = (
         'social.pipeline.user.create_user',
         'social.pipeline.social_auth.associate_user',
         'social.pipeline.social_auth.load_extra_data',
-        'social.pipeline.user.user_details'
+        'social.pipeline.user.user_details',
+        'hd.pipeline.update_user_social_data',
         # 'profiles.pipeline.user_details'
     )
 
@@ -139,17 +140,21 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '266b7fdea38675e9885a2cfed6d67649'
 # SOCIAL_AUTH_FACEBOOK_APP_NAMESPACE = 'zacklogin'
 
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email','public_profile']
+SOCIAL_AUTH_STRATEGY = 'social.strategies.django_strategy.DjangoStrategy'
+SOCIAL_AUTH_STORAGE = 'social.apps.django_app.default.models.DjangoStorage'
 
 #SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {'picture'}
 # FACEBOOK_EXTENDED_PERMISSIONS = ['email']
 
 # Backends
 AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
     'social.backends.facebook.FacebookAppOAuth2',
     'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
+    'social.backends.linkedin.LinkedinOAuth',
     'social.backends.twitter.TwitterOAuth',
-    'django.contrib.auth.backends.ModelBackend',
-)
+    )
 
 # URLs
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
