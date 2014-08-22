@@ -53,6 +53,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
+    'django.contrib.auth.context_processors.auth',
 )
 
 MIDDLEWARE_CLASSES = (
