@@ -32,6 +32,11 @@
 
 </header>
 
+{% if user.facebook_id %}
+	<img src="http://graph.facebook.com/{{ user.facebook_id }}/picture?type=large" alt="">
+	{% endif %}
+
+
 {% for job in jobs %}
 
 	<div class="container padding relative center-block">
