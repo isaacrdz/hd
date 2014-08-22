@@ -45,7 +45,7 @@ INSTALLED_APPS = (
     'profiles',
     'areas',
     'sorl.thumbnail',
-    'home',
+    #'home',
 
 )
 

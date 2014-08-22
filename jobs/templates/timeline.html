@@ -32,6 +32,27 @@
 
 </header>
 
+	<h1>Welcome {{username}} !</h1>
+
+	<p> Primer Nombre: {{user.first_name}} </p>
+	<p> Apellido  {{user.last_name}}</p>
+	<p> Email: {{user.email}}</p>
+	
+	
+	{% if user.facebook_id %}
+	<img src="http://graph.facebook.com/{{ user.facebook_id }}/picture?type=large" alt="">
+	{% endif %}
+
+
+
+
+
+<br>
+
+<a class="font-medium" href="/add">Please, Post a Job!</a>
+</div>
+	<a href="{% url 'log-out' %}" class="btn btn-danger btn-lg" role="button">Logout</a>
+
 {% if user.facebook_id %}
 	<img src="http://graph.facebook.com/{{ user.facebook_id }}/picture?type=large" alt="">
 {% endif %}

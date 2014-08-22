@@ -72,7 +72,7 @@ def home(request):
     context = {
         'user': request.user
     }
-    return render(request, 'index.html', context)
+    return render(request, 'timeline.html', context)
 
 
 def log_out(request):
